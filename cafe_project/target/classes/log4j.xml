@@ -11,6 +11,10 @@
 	</appender>
 	
 	<!-- Application Loggers -->
+	<logger name="cafe">
+		<level value="info" />
+	</logger>
+	
 	<logger name="com.cafe_project.www">
 		<level value="info" />
 	</logger>
