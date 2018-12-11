@@ -10,7 +10,7 @@ public class Cafe_ordering_department {
 	private String ordering_department_address;
 	private String ordering_department_manager;
 	private int ordering_department_phone;
-	private Date ordering_department_registration;
+	private Date ordering_department_date;
 	private String ordering_department_remarks;
 	
 	
