@@ -67,4 +67,5 @@ public class Member_customer {
 		this.customer_gender = customer_gender;
 	}
 	
+	
 }
