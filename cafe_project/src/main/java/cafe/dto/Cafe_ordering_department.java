@@ -19,9 +19,8 @@ public class Cafe_ordering_department {
 		return "Cafe_ordering_department [ordering_department_no=" + ordering_department_no + ", cafe_no=" + cafe_no
 				+ ", ordering_department_name=" + ordering_department_name + ", ordering_department_address="
 				+ ordering_department_address + ", ordering_department_manager=" + ordering_department_manager
-				+ ", ordering_department_phone=" + ordering_department_phone + ", ordering_department_registration="
-				+ ordering_department_registration + ", ordering_department_remarks=" + ordering_department_remarks
-				+ "]";
+				+ ", ordering_department_phone=" + ordering_department_phone + ", ordering_department_date="
+				+ ordering_department_date + ", ordering_department_remarks=" + ordering_department_remarks + "]";
 	}
 
 
@@ -85,13 +84,13 @@ public class Cafe_ordering_department {
 	}
 
 
-	public Date getOrdering_department_registration() {
-		return ordering_department_registration;
+	public Date getOrdering_department_date() {
+		return ordering_department_date;
 	}
 
 
-	public void setOrdering_department_registration(Date ordering_department_registration) {
-		this.ordering_department_registration = ordering_department_registration;
+	public void setOrdering_department_date(Date ordering_department_date) {
+		this.ordering_department_date = ordering_department_date;
 	}
 
 
@@ -103,8 +102,6 @@ public class Cafe_ordering_department {
 	public void setOrdering_department_remarks(String ordering_department_remarks) {
 		this.ordering_department_remarks = ordering_department_remarks;
 	}
-	
-	
 	
 	
 	
