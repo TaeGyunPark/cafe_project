@@ -4,7 +4,7 @@ public class Cafe_business_img {
 
 	private int business_img_no;
 	private int cafe_no;
-	private String business_img_fileno;
+	private int business_img_fileno;
 	private String business_img_original_name;
 	private String business_img_stored_name;
 	private String business_img_filesize;
@@ -39,12 +39,12 @@ public class Cafe_business_img {
 	}
 
 
-	public String getBusiness_img_fileno() {
+	public int getBusiness_img_fileno() {
 		return business_img_fileno;
 	}
 
 
-	public void setBusiness_img_fileno(String business_img_fileno) {
+	public void setBusiness_img_fileno(int business_img_fileno) {
 		this.business_img_fileno = business_img_fileno;
 	}
 

@@ -1,6 +1,6 @@
 package cafe.dto;
 
-public class Order {
+public class Cafe_order {
 	private int order_no;
 	private int pay_no;
 	private int mem_no;
