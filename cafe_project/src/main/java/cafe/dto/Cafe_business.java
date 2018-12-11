@@ -4,7 +4,7 @@ public class Cafe_business {
 	private int cafe_no;
 	private String business_phone;
 	private String business_address;
-	private String business_registration_number_fileno;
+	private String business_number_fileno;
 	private int cafe_hit;
 	private int cafe_score;
 	private int cafe_recommendation;
@@ -14,9 +14,9 @@ public class Cafe_business {
 	@Override
 	public String toString() {
 		return "Cafe_business [cafe_no=" + cafe_no + ", business_phone=" + business_phone + ", business_address="
-				+ business_address + ", business_registration_number_fileno=" + business_registration_number_fileno
-				+ ", cafe_hit=" + cafe_hit + ", cafe_score=" + cafe_score + ", cafe_recommendation="
-				+ cafe_recommendation + ", cafe_name=" + cafe_name + "]";
+				+ business_address + ", business_number_fileno=" + business_number_fileno + ", cafe_hit=" + cafe_hit
+				+ ", cafe_score=" + cafe_score + ", cafe_recommendation=" + cafe_recommendation + ", cafe_name="
+				+ cafe_name + "]";
 	}
 
 
@@ -50,13 +50,13 @@ public class Cafe_business {
 	}
 
 
-	public String getBusiness_registration_number_fileno() {
-		return business_registration_number_fileno;
+	public String getBusiness_number_fileno() {
+		return business_number_fileno;
 	}
 
 
-	public void setBusiness_registration_number_fileno(String business_registration_number_fileno) {
-		this.business_registration_number_fileno = business_registration_number_fileno;
+	public void setBusiness_number_fileno(String business_number_fileno) {
+		this.business_number_fileno = business_number_fileno;
 	}
 
 
@@ -98,6 +98,8 @@ public class Cafe_business {
 	public void setCafe_name(String cafe_name) {
 		this.cafe_name = cafe_name;
 	}
+	
+	
 	
 	
 	
