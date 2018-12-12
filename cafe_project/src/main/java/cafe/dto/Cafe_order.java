@@ -3,7 +3,7 @@ package cafe.dto;
 public class Cafe_order {
 	private int order_no;
 	private int pay_no;
-	private int mem_no;
+	private int customer_no;
 	private int cafe_no;
 	private int menu_no;
 	private int order_quantity;
@@ -12,8 +12,9 @@ public class Cafe_order {
 	
 	@Override
 	public String toString() {
-		return "Order [order_no=" + order_no + ", pay_no=" + pay_no + ", mem_no=" + mem_no + ", cafe_no=" + cafe_no
-				+ ", menu_no=" + menu_no + ", order_quantity=" + order_quantity + ", order_sum=" + order_sum + "]";
+		return "Cafe_order [order_no=" + order_no + ", pay_no=" + pay_no + ", customer_no=" + customer_no + ", cafe_no="
+				+ cafe_no + ", menu_no=" + menu_no + ", order_quantity=" + order_quantity + ", order_sum=" + order_sum
+				+ "]";
 	}
 
 
@@ -37,13 +38,13 @@ public class Cafe_order {
 	}
 
 
-	public int getMem_no() {
-		return mem_no;
+	public int getCustomer_no() {
+		return customer_no;
 	}
 
 
-	public void setMem_no(int mem_no) {
-		this.mem_no = mem_no;
+	public void setCustomer_no(int customer_no) {
+		this.customer_no = customer_no;
 	}
 
 
@@ -85,6 +86,8 @@ public class Cafe_order {
 	public void setOrder_sum(int order_sum) {
 		this.order_sum = order_sum;
 	}
+	
+	
 	
 	
 	
