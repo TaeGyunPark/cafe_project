@@ -7,7 +7,7 @@ public class Memeber_owner {
 	private int cafe_no;
 	private String owner_email;
 	private String owner_pw;
-	private int owner_phone;
+	private String owner_phone;
 	private String owner_name;
 	private String business_name;
 	private int business_registration_number;
@@ -63,12 +63,12 @@ public class Memeber_owner {
 	}
 
 
-	public int getOwner_phone() {
+	public String getOwner_phone() {
 		return owner_phone;
 	}
 
 
-	public void setOwner_phone(int owner_phone) {
+	public void setOwner_phone(String owner_phone) {
 		this.owner_phone = owner_phone;
 	}
 

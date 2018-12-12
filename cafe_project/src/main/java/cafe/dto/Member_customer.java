@@ -6,7 +6,7 @@ public class Member_customer {
 	private String customer_pw;
 	private String customer_name;
 	private String customer_nick;
-	private int customer_phone;
+	private String customer_phone;
 	private String customer_status;
 	private String customer_gender;
 	
@@ -48,10 +48,10 @@ public class Member_customer {
 	public void setCustomer_nick(String customer_nick) {
 		this.customer_nick = customer_nick;
 	}
-	public int getCustomer_phone() {
+	public String getCustomer_phone() {
 		return customer_phone;
 	}
-	public void setCustomer_phone(int customer_phone) {
+	public void setCustomer_phone(String customer_phone) {
 		this.customer_phone = customer_phone;
 	}
 	public String getCustomer_status() {
