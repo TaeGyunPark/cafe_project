@@ -1,7 +1,7 @@
 package cafe.dto;
 
 public class One_to_one_answer {
-	private int contact_answer_no;
+	private int contact_no;
 	private String contact_answer_title;
 	private String contact_answer_content;
 	private String contact_answer_toggle;
@@ -9,19 +9,19 @@ public class One_to_one_answer {
 	
 	@Override
 	public String toString() {
-		return "One_to_one_answer [contact_answer_no=" + contact_answer_no + ", contact_answer_title="
-				+ contact_answer_title + ", contact_answer_content=" + contact_answer_content
-				+ ", contact_answer_toggle=" + contact_answer_toggle + "]";
+		return "One_to_one_answer [contact_no=" + contact_no + ", contact_answer_title=" + contact_answer_title
+				+ ", contact_answer_content=" + contact_answer_content + ", contact_answer_toggle="
+				+ contact_answer_toggle + "]";
 	}
 
 
-	public int getContact_answer_no() {
-		return contact_answer_no;
+	public int getContact_no() {
+		return contact_no;
 	}
 
 
-	public void setContact_answer_no(int contact_answer_no) {
-		this.contact_answer_no = contact_answer_no;
+	public void setContact_no(int contact_no) {
+		this.contact_no = contact_no;
 	}
 
 
@@ -53,6 +53,7 @@ public class One_to_one_answer {
 	public void setContact_answer_toggle(String contact_answer_toggle) {
 		this.contact_answer_toggle = contact_answer_toggle;
 	}
+	
 	
 	
 	
