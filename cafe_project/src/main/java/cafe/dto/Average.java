@@ -6,6 +6,7 @@ public class Average {
 	private String customer_nick;
 	private int review_no;
 	
+	// 주석 테스트 - 181212
 	
 	@Override
 	public String toString() {
