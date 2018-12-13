@@ -1,1 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 마이바티스 3 매퍼 DOCTYPE -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cafe.dao.face.Menu_Management_Dao">
+	<insert id="category_insert" parameterType="cafe.dto.Cafe_menu_category">
+		insert into Cafe_menu_category values(menu_category_no_seq.nextval, 1, 1,)
+	</insert>
+
+</mapper>

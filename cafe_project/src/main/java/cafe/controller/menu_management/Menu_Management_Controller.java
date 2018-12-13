@@ -33,11 +33,11 @@ public class Menu_Management_Controller {
 	
 	@RequestMapping(value="/category_insert", method=RequestMethod.POST)
 //	public ModelAndView category_insert_proc(@RequestParam(value="category_name") String category_name, @RequestParam(value="category_content") String category_content, @RequestParam(value="category_file") MultipartFile fileupload) {
-		public ModelAndView category_insert_proc(String category_name, String category_content, @RequestParam(value="category_file") MultipartFile fileupload) {
+		public ModelAndView category_insert_proc(String category_name, String category_explanation, @RequestParam(value="category_file") MultipartFile fileupload) {
 		ModelAndView mav = new ModelAndView();
 		
 		logger.info(category_name);
-		logger.info(category_content);
+		logger.info(category_explanation);
 		logger.info(fileupload.getOriginalFilename());
 		
 		

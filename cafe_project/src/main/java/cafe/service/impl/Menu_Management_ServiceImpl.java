@@ -20,8 +20,9 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 	@Autowired
 	Menu_Management_Dao menu_Management_Dao;
 
+	@Override
 	public void insertcategory(ServletContext context, MultipartFile file, String category_name,
-			String category_content) {
+			String category_explanation) {
 
 		Cafe_menu_category cafe_menu_category = new Cafe_menu_category();
 
@@ -46,7 +47,10 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 			e.printStackTrace();
 		}
 		
-		
+		cafe_menu_category.setMenu_category_name(category_name);
+		cafe_menu_category.setMenu_category_img_origin_name(file.getOriginalFilename());
+		cafe_menu_category.setMenu_category_img_stored_name(name);
+		cafe_menu_category.setMenu_category_explanation(category_explanation);
 
 	}
 }

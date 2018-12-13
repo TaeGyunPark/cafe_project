@@ -81,7 +81,7 @@ width: 50%
 <form action="/category_insert" method="post" enctype="multipart/form-data">
 
 <input type="text" placeholder="카테고리명" name="category_name" id="category_name"size="10"><br>
-<textarea rows="10" cols="50" name="category_content" id="category_content" placeholder="카테고리 설명"></textarea><br>
+<textarea rows="10" cols="50" name="category_explanation" id="category_explanation" placeholder="카테고리 설명"></textarea><br>
 <input type="file" name="category_file" id="category_file"><br>
 
 
