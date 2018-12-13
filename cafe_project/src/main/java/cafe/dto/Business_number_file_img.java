@@ -4,7 +4,7 @@ public class Business_number_file_img {
 	private int cafe_no;
 	private String business_number_file_origin_name;
 	private String business_number_file_stored_name;
-	private int business_number_file_size;
+	private Long business_number_file_size;
 	
 	
 	@Override
@@ -45,12 +45,12 @@ public class Business_number_file_img {
 	}
 
 
-	public int getBusiness_number_file_size() {
+	public Long getBusiness_number_file_size() {
 		return business_number_file_size;
 	}
 
 
-	public void setBusiness_number_file_size(int business_number_file_size) {
+	public void setBusiness_number_file_size(Long business_number_file_size) {
 		this.business_number_file_size = business_number_file_size;
 	}
 	
