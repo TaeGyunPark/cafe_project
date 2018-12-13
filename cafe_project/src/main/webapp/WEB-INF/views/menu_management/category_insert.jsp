@@ -17,6 +17,14 @@
 
 <style type="text/css">
 
+.image_view{
+	width: 300px;
+	margin-top: 50px;
+}
+.image_view img{
+	max-width: 100%;
+}
+
 #root{
 	width: 100%
 }
@@ -30,12 +38,43 @@ width: 50%
 }
 </style>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+	var sel_file;
+	
+	$(document).ready(function(){
+		$("#category_file").on("change", handleImgFileSelect);
+	});
+	
+	function handleImgFileSelect(e) {
+		var files = e.target.files;
+		var filesArr = Array.prototype.slice.call(files);
+		
+		filesArr.forEach(function(f) {
+			if(!f.type.match("image.*")) {
+				alert("확장자는 이미지 확장자만 가능합니다");
+				return;
+			}
+			
+			sel_file = f;
+			
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$("#img").attr("src",e.target.result);
+			}
+			reader.readAsDataURL(f);
+		});
+	}
+
+</script>
+
 </head>
 <body>
 
 <div id="root">
 
-<div id="image_view">
+<div class="image_view">
+	<img id="img" src="/resources/img/xbox.JPG"/>
 </div>
 
 <div id="category_info">
