@@ -9,7 +9,7 @@ public class Cafe_ordering_department {
 	private String ordering_department_name;
 	private String ordering_department_address;
 	private String ordering_department_manager;
-	private int ordering_department_phone;
+	private String ordering_department_phone;
 	private Date ordering_department_date;
 	private String ordering_department_remarks;
 	
@@ -74,12 +74,12 @@ public class Cafe_ordering_department {
 	}
 
 
-	public int getOrdering_department_phone() {
+	public String getOrdering_department_phone() {
 		return ordering_department_phone;
 	}
 
 
-	public void setOrdering_department_phone(int ordering_department_phone) {
+	public void setOrdering_department_phone(String ordering_department_phone) {
 		this.ordering_department_phone = ordering_department_phone;
 	}
 

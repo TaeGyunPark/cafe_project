@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 마이바티스 3 매터 DOCTYPE -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 매퍼 설정 -->
+<mapper namespace="cafe.dao.face.owner.orderingdepartment.OwnerOrderingDepartmentDao">
+	
+	<sql id="selectOrderingDepartment">
+		SELECT
+	        ORDERING_DEPARTMENT_NO,
+	        CAFE_NO,
+	        ORDERING_DEPARTMENT_NAME,
+	        ORDERING_DEPARTMENT_ADDRESS,
+	        ORDERING_DEPARTMENT_MANAGER,
+	        ORDERING_DEPARTMENT_PHONE,
+	        ORDERING_DEPARTMENT_DATE,
+	        ORDERING_DEPARTMENT_REMARKS
+		FROM cafe_ordering_department
+	</sql>
+	
+	<select id="selectOrderingDepartmentList" resultType="cafe.dto.Cafe_ordering_department" parameterType="cafe.dto.Cafe_ordering_department">
+		<include refid="selectOrderingDepartment"/>
+		WHERE cafe_no=#{cafe_no}
+		ORDER BY ORDERING_DEPARTMENT_DATE DESC
+	</select>
+	
+	<select id="selectOneOrderingDepartment" resultType="cafe.dto.Cafe_ordering_department" parameterType="cafe.dto.Cafe_ordering_department">
+		<include refid="selectOrderingDepartment"/>
+		WHERE ordering_department_no=#{ordering_department_no }
+	</select>	
+	
+</mapper>
