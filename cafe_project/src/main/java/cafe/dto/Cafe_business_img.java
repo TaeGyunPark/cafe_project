@@ -7,7 +7,7 @@ public class Cafe_business_img {
 	private int business_img_fileno;
 	private String business_img_original_name;
 	private String business_img_stored_name;
-	private int business_img_filesize;
+	private long business_img_filesize;
 	
 	
 	@Override
@@ -69,16 +69,17 @@ public class Cafe_business_img {
 	}
 
 
-	public int getBusiness_img_filesize() {
+	public long getBusiness_img_filesize() {
 		return business_img_filesize;
 	}
 
 
-	public void setBusiness_img_filesize(int business_img_filesize) {
+	public void setBusiness_img_filesize(long business_img_filesize) {
 		this.business_img_filesize = business_img_filesize;
 	}
 	
 	
 	
 	
+
 }
