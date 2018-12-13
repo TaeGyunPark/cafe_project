@@ -7,7 +7,11 @@
 
 <mapper namespace="cafe.dao.face.Menu_Management_Dao">
 	<insert id="category_insert" parameterType="cafe.dto.Cafe_menu_category">
-		insert into Cafe_menu_category values(menu_category_no_seq.nextval, 1, #{menu_category_name}, 1, #{menu_category_img_origin_name}, #{menu_category_img_stored_name}, #{menu_category_explanation})
+		insert into cafe_menu_category values(menu_category_no_seq.nextval, 1, #{menu_category_name}, 1, #{menu_category_img_origin_name}, #{menu_category_img_stored_name}, #{menu_category_explanation})
 	</insert>
+	
+	<select id="category_selectAll" resultType="cafe.dto.Cafe_menu_category">
+		select * from Cafe_menu_category
+	</select>
 
 </mapper>

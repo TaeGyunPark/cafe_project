@@ -2,6 +2,8 @@ package cafe.service.impl;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -51,6 +53,13 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 		cafe_menu_category.setMenu_category_img_origin_name(file.getOriginalFilename());
 		cafe_menu_category.setMenu_category_img_stored_name(name);
 		cafe_menu_category.setMenu_category_explanation(category_explanation);
+		
+		menu_Management_Dao.category_insert(cafe_menu_category);
 
+	}
+	
+	
+	public List category_selectAll() {	
+		return menu_Management_Dao.category_selectAll();
 	}
 }
