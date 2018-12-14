@@ -2,7 +2,7 @@ package cafe.dto;
 
 import java.util.Date;
 
-public class Memeber_owner {
+public class Member_owner {
 	private int owner_no;
 	private int cafe_no;
 	private String owner_email;
