@@ -10,7 +10,6 @@ public class Cafe_business {
    private String cafe_name;
    private String cafe_explanation;
    private int owner_no;
-   private String customer_nick;
    
    
    @Override
@@ -18,7 +17,7 @@ public class Cafe_business {
       return "Cafe_business [cafe_no=" + cafe_no + ", business_phone=" + business_phone + ", business_address="
             + business_address + ", cafe_hit=" + cafe_hit + ", cafe_score=" + cafe_score + ", cafe_recommendation="
             + cafe_recommendation + ", cafe_name=" + cafe_name + ", cafe_explanation=" + cafe_explanation
-            + ", owner_no=" + owner_no + ", customer_nick=" + customer_nick + "]";
+            + ", owner_no=" + owner_no + "]";
    }
    public int getCafe_no() {
       return cafe_no;
@@ -74,12 +73,7 @@ public class Cafe_business {
    public void setOwner_no(int owner_no) {
       this.owner_no = owner_no;
    }
-   public String getCustomer_nick() {
-      return customer_nick;
-   }
-   public void setCustomer_nick(String customer_nick) {
-      this.customer_nick = customer_nick;
-   }
+
 
       
 }
