@@ -3,7 +3,7 @@ package cafe.dto;
 public class Cafe_recommendation {
    
    private int cafe_no;
-    private String customer_nick;
+   private String customer_nick;
    @Override
    public String toString() {
       return "Cafe_recommendation [cafe_no=" + cafe_no + ", customer_nick=" + customer_nick + "]";
