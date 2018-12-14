@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Member_owner {
 	private int owner_no;
-	private int cafe_no;
 	private String owner_email;
 	private String owner_pw;
 	private String owner_phone;
@@ -16,10 +15,10 @@ public class Member_owner {
 	
 	@Override
 	public String toString() {
-		return "Memeber_owner [owner_no=" + owner_no + ", cafe_no=" + cafe_no + ", owner_email=" + owner_email
-				+ ", owner_pw=" + owner_pw + ", owner_phone=" + owner_phone + ", owner_name=" + owner_name
-				+ ", business_name=" + business_name + ", business_registration_number=" + business_registration_number
-				+ ", owner_join_date=" + owner_join_date + "]";
+		return "Member_owner [owner_no=" + owner_no + ", owner_email=" + owner_email + ", owner_pw=" + owner_pw
+				+ ", owner_phone=" + owner_phone + ", owner_name=" + owner_name + ", business_name=" + business_name
+				+ ", business_registration_number=" + business_registration_number + ", owner_join_date="
+				+ owner_join_date + "]";
 	}
 
 
@@ -30,16 +29,6 @@ public class Member_owner {
 
 	public void setOwner_no(int owner_no) {
 		this.owner_no = owner_no;
-	}
-
-
-	public int getCafe_no() {
-		return cafe_no;
-	}
-
-
-	public void setCafe_no(int cafe_no) {
-		this.cafe_no = cafe_no;
 	}
 
 
