@@ -66,6 +66,7 @@ public class Menu_Management_Controller {
 		
 		logger.info(list.toString());
 		
+		mav.addObject("list", list);
 		mav.setViewName("menu_management/category_list");
 		
 		return mav;
