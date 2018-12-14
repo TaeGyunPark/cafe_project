@@ -13,6 +13,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+	  $("#category_img").click(function(){
+		  $("#modal_category_img").attr("src", "/resources/category_img/2.jpg");
+	  });
+	});
+
+</script>
+
 
 </head>
 <body>
@@ -31,7 +40,7 @@
 	<td><input type="checkbox" name="${category.menu_category_no}"></td>
 	<td>${category.menu_category_name }</td>
 	<td>${category.menu_category_explanation }</td>
-	<td><button type="button" data-toggle="modal" data-target="#myModal">사진</button></td>
+	<td><button type="button" data-toggle="modal" data-target="#myModal" id="category_img">사진</button></td>
 	<td><button type="button" >수정</button></td>
 	<td><button type="button" >삭제</button></td>
 	</tr>
@@ -50,7 +59,9 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-     		<img class="categoryImg" src="${path }\1.jpg">
+<%--      		<img class="categoryImg" src="${path}1.jpg"> --%>
+     		<img class="categoryImg" src="/resources/category_img/1.jpg" id=modal_category_img>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -66,8 +66,8 @@ public class Menu_Management_Controller {
 		
 		logger.info(list.toString());
 		
-		String path = context.getRealPath("resources/category_img");
-		mav.addObject("path", path);
+//		String path = context.getRealPath("resources/category_img");
+		
 		mav.addObject("list", list);
 		mav.setViewName("menu_management/category_list");
 		
