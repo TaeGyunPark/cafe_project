@@ -4,6 +4,7 @@ public class Cafe_score {
    private int cafe_no;
    private String customer_nick;
    private int cafe_score;
+   
    @Override
    public String toString() {
       return "Cafe_score [cafe_no=" + cafe_no + ", customer_nick=" + customer_nick + ", cafe_score=" + cafe_score
