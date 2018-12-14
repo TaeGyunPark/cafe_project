@@ -50,7 +50,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <img class="categoryImg" src="/resources/category_img/11_트럭1.jpg" >
+     		<img class="categoryImg" src="${path }\1.jpg">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

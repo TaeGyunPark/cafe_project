@@ -9,13 +9,15 @@ public class Cafe_business {
 	private int cafe_recommendation;
 	private String cafe_name;
 	private String cafe_explanation;
+	private int owner_no;
 	
 	
 	@Override
 	public String toString() {
 		return "Cafe_business [cafe_no=" + cafe_no + ", business_phone=" + business_phone + ", business_address="
 				+ business_address + ", cafe_hit=" + cafe_hit + ", cafe_score=" + cafe_score + ", cafe_recommendation="
-				+ cafe_recommendation + ", cafe_name=" + cafe_name + ", cafe_explanation=" + cafe_explanation + "]";
+				+ cafe_recommendation + ", cafe_name=" + cafe_name + ", cafe_explanation=" + cafe_explanation
+				+ ", owner_no=" + owner_no + "]";
 	}
 
 
@@ -97,6 +99,19 @@ public class Cafe_business {
 	public void setCafe_explanation(String cafe_explanation) {
 		this.cafe_explanation = cafe_explanation;
 	}
+
+
+	public int getOwner_no() {
+		return owner_no;
+	}
+
+
+	public void setOwner_no(int owner_no) {
+		this.owner_no = owner_no;
+	}
+	
+	
+	
 	
 	
 	
