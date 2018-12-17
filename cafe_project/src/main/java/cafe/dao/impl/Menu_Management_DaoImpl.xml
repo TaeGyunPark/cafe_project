@@ -11,7 +11,20 @@
 	</insert>
 	
 	<select id="category_selectAll" resultType="cafe.dto.Cafe_menu_category">
-		select * from Cafe_menu_category
+		select * from Cafe_menu_category order by menu_category_no
 	</select>
+	
+	<select id="category_select" parameterType="cafe.dto.Cafe_menu_category" resultType="cafe.dto.Cafe_menu_category">
+		select * from Cafe_menu_category where menu_category_no=#{menu_category_no}
+	</select>
+	
+	<update id="category_update" parameterType="cafe.dto.Cafe_menu_category">
+		update cafe_menu_category set 
+		menu_category_name = #{menu_category_name},
+		menu_category_img_origin_name = #{menu_category_img_origin_name},
+		menu_category_img_stored_name = #{menu_category_img_stored_name},
+		menu_category_explanation = #{menu_category_explanation}
+		where menu_category_no = #{menu_category_no}
+	</update>
 
 </mapper>

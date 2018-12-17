@@ -73,4 +73,36 @@ public class Menu_Management_Controller {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/category_update", method=RequestMethod.GET)
+	public ModelAndView category_update(Cafe_menu_category cafe_menu_category) {
+		
+		ModelAndView mav = new ModelAndView();
+		//System.out.println(menu_category_no);
+		
+		cafe_menu_category=menu_management_service.category_select(cafe_menu_category);
+		logger.info(cafe_menu_category.toString());
+		
+		mav.addObject("cafe_menu_category", cafe_menu_category);
+		mav.setViewName("menu_management/category_update");
+		
+		return mav;
+		
+	}
+	
+	@RequestMapping(value="/category_update", method=RequestMethod.POST)
+	public ModelAndView category_update_proc(String category_name, String category_explanation, @RequestParam(value="category_file") MultipartFile fileupload) {
+		ModelAndView mav = new ModelAndView();
+		
+		menu_management_service.update_category(context, fileupload, category_name, category_explanation);
+		
+		List<Cafe_menu_category> list = new ArrayList<Cafe_menu_category>();
+		
+		list=menu_management_service.category_selectAll();
+		
+		mav.addObject("list", list);
+		mav.setViewName("menu_management/category_list");
+		
+		return mav;
+	}
 }

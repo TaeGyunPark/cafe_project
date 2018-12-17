@@ -18,7 +18,16 @@ $(document).ready(function(){
 	  $("#category_img").click(function(){
 		  $("#modal_category_img").attr("src", "/resources/category_img/2.jpg");
 	  });
+});
+
+$(document).ready(function() {
+	$("table").on("click", "tr", function() {
+		//클릭이벤트가 발생한 <tr>의 첫번째 <td>자식의 id
+		var menu_category_no = $(this).children("td").eq(0).attr('id');
+		
+		$(location).attr("href","/category_update?menu_category_no="+menu_category_no);
 	});
+});
 
 </script>
 
@@ -37,7 +46,7 @@ $(document).ready(function(){
 <th>삭제</th>
 <c:forEach items="${list }" var="category">
 	<tr>
-	<td><input type="checkbox" name="${category.menu_category_no}"></td>
+	<td id="${category.menu_category_no}" id="${category.menu_category_no}"></td>
 	<td>${category.menu_category_name }</td>
 	<td>${category.menu_category_explanation }</td>
 	<td><button type="button" data-toggle="modal" data-target="#myModal" id="category_img">사진</button></td>
