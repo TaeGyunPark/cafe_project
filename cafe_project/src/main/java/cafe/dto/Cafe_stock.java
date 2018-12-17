@@ -10,7 +10,7 @@ public class Cafe_stock {
 	private String stock_unit;
 	private int stock_unit_quantity;
 	private int stock_unit_price;
-	private String ordering_department_name;
+	private int ordering_department_no;
 	
 	@Override
 	public String toString() {
@@ -18,7 +18,7 @@ public class Cafe_stock {
 				+ ", stock_current_amount=" + stock_current_amount + ", stock_minimum_quantity="
 				+ stock_minimum_quantity + ", stock_ordering_unit=" + stock_ordering_unit + ", stock_unit=" + stock_unit
 				+ ", stock_unit_quantity=" + stock_unit_quantity + ", stock_unit_price=" + stock_unit_price
-				+ ", ordering_department_name=" + ordering_department_name + "]";
+				+ ", ordering_department_name=" + ordering_department_no + "]";
 	}
 
 	public int getStock_no() {
@@ -93,12 +93,12 @@ public class Cafe_stock {
 		this.stock_unit_price = stock_unit_price;
 	}
 
-	public String getOrdering_department_name() {
-		return ordering_department_name;
+	public int getOrdering_department_no() {
+		return ordering_department_no;
 	}
 
-	public void setOrdering_department_name(String ordering_department_name) {
-		this.ordering_department_name = ordering_department_name;
+	public void setOrdering_department_name(int ordering_department_no) {
+		this.ordering_department_no = ordering_department_no;
 	}
 	
 	
