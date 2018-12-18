@@ -1,5 +1,6 @@
 package cafe.controller.menu_management;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,18 +41,15 @@ public class Menu_Management_Controller {
 	
 	@RequestMapping(value="/category_insert", method=RequestMethod.POST)
 //	public ModelAndView category_insert_proc(@RequestParam(value="category_name") String category_name, @RequestParam(value="category_content") String category_content, @RequestParam(value="category_file") MultipartFile fileupload) {
-		public ModelAndView category_insert_proc(String category_name, String category_explanation, @RequestParam(value="category_file") MultipartFile fileupload) {
+		public String category_insert_proc(String category_name, String category_explanation, @RequestParam(value="category_file") MultipartFile fileupload) {
 		ModelAndView mav = new ModelAndView();
 		
-		logger.info(category_name);
-		logger.info(category_explanation);
-		logger.info(fileupload.getOriginalFilename());
+	
 		
 		menu_management_service.insertcategory(context, fileupload, category_name, category_explanation);
 
-		mav.setViewName("menu_management/category_insert");
 		
-		return mav;
+		return "redirect:/category_list";
 	}
 	
 
@@ -75,13 +73,14 @@ public class Menu_Management_Controller {
 	}
 	
 	@RequestMapping(value="/category_update", method=RequestMethod.GET)
-	public ModelAndView category_update(Cafe_menu_category cafe_menu_category) {
+	public ModelAndView category_update(int category_no) {
+		Cafe_menu_category cafe_menu_category = new Cafe_menu_category();
 		
 		ModelAndView mav = new ModelAndView();
 		//System.out.println(menu_category_no);
 		
-		cafe_menu_category=menu_management_service.category_select(cafe_menu_category);
-		logger.info(cafe_menu_category.toString());
+		
+		cafe_menu_category=menu_management_service.category_select(category_no);
 		
 		mav.addObject("cafe_menu_category", cafe_menu_category);
 		mav.setViewName("menu_management/category_update");
@@ -91,18 +90,45 @@ public class Menu_Management_Controller {
 	}
 	
 	@RequestMapping(value="/category_update", method=RequestMethod.POST)
-	public ModelAndView category_update_proc(String category_name, String category_explanation, @RequestParam(value="category_file") MultipartFile fileupload) {
+	public String category_update_proc(String category_name, String category_explanation, int category_no, @RequestParam(value="category_file") MultipartFile fileupload) {
 		ModelAndView mav = new ModelAndView();
 		
-		menu_management_service.update_category(context, fileupload, category_name, category_explanation);
 		
-		List<Cafe_menu_category> list = new ArrayList<Cafe_menu_category>();
+		menu_management_service.update_category(context, fileupload, category_name, category_explanation, category_no);
+		
+		
+		
+		return "redirect:/category_list";
+	}
+	
+	@RequestMapping(value="/category_delete", method=RequestMethod.GET)
+	public String category_delete(int category_no) {
+		
+		menu_management_service.delete_category(category_no);
+		
+		return "redirect:/category_list";
+	}
+	
+	@RequestMapping(value="/menu_list", method=RequestMethod.GET)
+	public ModelAndView menu_list() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("menu_management/menu_list");
+		return mav;
+	}
+	
+	@RequestMapping(value="/menu_insert", method=RequestMethod.GET)
+	public ModelAndView menu_insert() {
+		ModelAndView mav = new ModelAndView();
+		List<Cafe_menu_category> list = new ArrayList<>();
 		
 		list=menu_management_service.category_selectAll();
 		
 		mav.addObject("list", list);
-		mav.setViewName("menu_management/category_list");
-		
+		mav.setViewName("menu_management/menu_insert");
 		return mav;
 	}
+	
+	
+	
 }

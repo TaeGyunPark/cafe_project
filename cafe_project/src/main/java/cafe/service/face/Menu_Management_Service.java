@@ -15,8 +15,12 @@ public interface Menu_Management_Service {
 	
 	public List category_selectAll();
 	
-	public Cafe_menu_category category_select(Cafe_menu_category cafe_menu_category);
+	public Cafe_menu_category category_select(int category_no);
 	
 	public void update_category(ServletContext context, MultipartFile file, String category_name,
-			String category_explanation);
+			String category_explanation, int category_no);
+	
+	public void delete_category(int category_no);
+	
+	
 }

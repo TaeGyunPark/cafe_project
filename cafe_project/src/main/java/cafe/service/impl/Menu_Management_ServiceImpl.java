@@ -63,12 +63,12 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 		return menu_Management_Dao.category_selectAll();
 	}
 	
-	public Cafe_menu_category category_select(Cafe_menu_category cafe_menu_category) {
-		return menu_Management_Dao.category_select(cafe_menu_category);
+	public Cafe_menu_category category_select(int category_no) {
+		return menu_Management_Dao.category_select(category_no);
 	}
 	
 	public void update_category(ServletContext context, MultipartFile file, String category_name,
-			String category_explanation) {
+			String category_explanation, int category_no) {
 		
 		Cafe_menu_category cafe_menu_category = new Cafe_menu_category();
 
@@ -93,6 +93,7 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 			e.printStackTrace();
 		}
 		
+		cafe_menu_category.setMenu_category_no(category_no);
 		cafe_menu_category.setMenu_category_name(category_name);
 		cafe_menu_category.setMenu_category_img_origin_name(file.getOriginalFilename());
 		cafe_menu_category.setMenu_category_img_stored_name(name);
@@ -102,4 +103,15 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 		
 		
 	}
+
+
+	@Override
+	public void delete_category(int category_no) {
+		
+		Cafe_menu_category cafe_menu_category = new Cafe_menu_category();
+		cafe_menu_category.setMenu_category_no(category_no);
+		
+		menu_Management_Dao.categoey_delete(cafe_menu_category);
+	}
+	
 }

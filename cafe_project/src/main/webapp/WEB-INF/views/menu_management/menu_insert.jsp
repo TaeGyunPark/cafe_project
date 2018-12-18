@@ -9,12 +9,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>카테고리 등록</title>
+<title>메뉴 등록</title>
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <style type="text/css">
 
 .image_view{
@@ -35,6 +35,11 @@ width: 50%
 
 #category_info{
 width: 50%
+}
+
+#Temperature{
+	border: 0.5px solid;
+	color: "gray";
 }
 </style>
 
@@ -78,11 +83,23 @@ width: 50%
 </div>
 
 <div id="category_info">
-<form action="/category_insert" method="post" enctype="multipart/form-data">
+<form action="/menu_insert" method="post" enctype="multipart/form-data">
 
-<input type="text" placeholder="카테고리명" name="category_name" id="category_name"size="10"><br>
-<textarea rows="10" cols="50" name="category_explanation" id="category_explanation" placeholder="카테고리 설명"></textarea><br>
-<input type="file" name="category_file" id="category_file"><br>
+<input type="text" placeholder="메뉴명" name="menu_name" id="menu_name"size="10"><br>
+<select>
+	<c:forEach items="${list }" var="category">
+	<option>${category.menu_category_name}</option>
+	</c:forEach>
+</select><br><br>
+<div id="Temperature">
+	<p>
+	<label>가격 </label><input type="radio" name="menu_Temperature" id="menu_Temperature"> ICE/HOT 별도입력<br>
+	<input type="text" placeholder="ICE 입력" id="menu_ice"><br>
+	<input type="text" placeholder="HOT 입력" id="menu_hot">
+	</p>
+</div><br>
+<textarea rows="10" cols="50" name="menu_explanation" id="menu_explanation" placeholder="메뉴 설명"></textarea><br>
+<input multiple="multiple" type="file" name="category_file" id="category_file"><br>
 
 
 <button>버튼이지롱</button>
