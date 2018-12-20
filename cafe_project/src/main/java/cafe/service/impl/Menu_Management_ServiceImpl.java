@@ -159,5 +159,12 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 	public List menu_selectAll() {
 		return menu_Management_Dao.menu_selectAll();
 	}
+
+
+	@Override
+	public void delete_menu(int menu_no) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

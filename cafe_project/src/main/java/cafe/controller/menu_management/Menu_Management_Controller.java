@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.reflection.SystemMetaObject;
+import org.omg.CORBA.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -150,9 +153,16 @@ public class Menu_Management_Controller {
 		
 		list=menu_management_service.menu_selectAll();
 		mav.addObject("list", list);
-		mav.setViewName("menu_management/menu_list");
+		mav.setViewName("redirect:/menu_list");
+		
+
 		
 		return mav;
+	}
+	
+	@RequestMapping(value="/menu_delete", method=RequestMethod.GET)
+	public String menu_delete(int menu_no) {
+		return null;
 	}
 	
 	

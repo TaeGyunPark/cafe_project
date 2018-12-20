@@ -37,7 +37,8 @@
 	</insert>
 	
 	<select id="menu_selectAll" resultType="cafe.dto.Cafe_business_menu">
-		select * from Cafe_business_menu
+		select M.*, c.menu_category_name from cafe_business_menu M,
+(select menu_category_no,menu_category_name from cafe_menu_category) C where m.menu_category_no=c.menu_category_no
 	</select>
 
 </mapper>

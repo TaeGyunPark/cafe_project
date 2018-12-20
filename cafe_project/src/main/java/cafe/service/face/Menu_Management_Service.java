@@ -27,4 +27,6 @@ public interface Menu_Management_Service {
 	
 	public List menu_selectAll();
 	
+	public void delete_menu(int menu_no);
+	
 }

@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -41,13 +42,13 @@ function find_id(name) {
 	<tr>
 	<td><input type="checkbox"></td>
 	<td>${menu.menu_name }</td>
-	<td>${menu.menu_category_no }</td>
+	<td>${menu.menu_category_name }</td>
 	<td>${menu.menu_temperature }</td>
 	<td>${menu.menu_price }</td>
 	<td>${menu.menu_explanation }</td>
-	<td><button type="button" data-toggle="modal" data-target="#myModal" id="${menu.menu_name }" onclick="find_id('${menu.menu_image_stored_name}')">사진</button></td>
-	<td><button type="button" onclick='location.href="/category_update?category_no=${menu.menu_no }";'>수정</button></td>
-	<td><button type="button" onclick='location.href="/category_delete?category_no=${menu.menu_no }";'>삭제</button></td>
+	<td><button type="button" data-toggle="modal" data-target="#myModal" id="${menu.menu_name }" onclick="find_id('${menu.menu_image_stored_name}')"><i class="fas fa-images"></i></button></td>
+	<td><button type="button" onclick='location.href="/menu_update?menu_no=${menu.menu_no }";'><i class="fas fa-pen"></i></button></td>
+	<td><button type="button" onclick='location.href="/menu_delete?menu_no=${menu.menu_no }";'><i class="fas fa-trash"></i></button></td>
 	</tr>
 </c:forEach>
 
