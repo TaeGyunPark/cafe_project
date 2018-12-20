@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import cafe.dto.Cafe_business_menu;
 import cafe.dto.Cafe_menu_category;
 import cafe.service.face.Menu_Management_Service;
 
@@ -114,6 +115,10 @@ public class Menu_Management_Controller {
 	public ModelAndView menu_list() {
 		ModelAndView mav = new ModelAndView();
 		
+		List<Cafe_business_menu> list = new ArrayList();
+
+		list=menu_management_service.menu_selectAll();
+		mav.addObject("list", list);
 		mav.setViewName("menu_management/menu_list");
 		return mav;
 	}
@@ -131,8 +136,10 @@ public class Menu_Management_Controller {
 	}
 	
 	@RequestMapping(value="/menu_insert", method=RequestMethod.POST)
-	public void menu_insert_proc(String menu_name, String category_select, String menu_explanation, int menu_price, @RequestParam(value="temperature") String temperature, @RequestParam(value="menu_file") MultipartFile fileupload) {
+	public ModelAndView menu_insert_proc(String menu_name, int category_select, String menu_explanation, int menu_price, @RequestParam(value="temperature") String temperature, @RequestParam(value="menu_file") MultipartFile fileupload) {
 		
+		ModelAndView mav = new ModelAndView();
+		List<Cafe_business_menu> list = new ArrayList();
 //		System.out.println(menu_name);
 //		System.out.println(category_select);
 //		System.out.println(menu_explanation);
@@ -141,6 +148,11 @@ public class Menu_Management_Controller {
 //		System.out.println(fileupload);
 		menu_management_service.insert_menu(context, fileupload, category_select, menu_name, menu_explanation, menu_price, temperature);
 		
+		list=menu_management_service.menu_selectAll();
+		mav.addObject("list", list);
+		mav.setViewName("menu_management/menu_list");
+		
+		return mav;
 	}
 	
 	

@@ -100,7 +100,7 @@
 				<input type="text" placeholder="메뉴명" name="menu_name" id="menu_name" size="10"><br> 
 				<select id="category_select" name="category_select">
 					<c:forEach items="${list }" var="category">
-						<option value="${category.menu_category_name}">${category.menu_category_name}</option>
+						<option value="${category.menu_category_no}">${category.menu_category_name}</option>
 					</c:forEach>
 				</select><br>
 				<br>

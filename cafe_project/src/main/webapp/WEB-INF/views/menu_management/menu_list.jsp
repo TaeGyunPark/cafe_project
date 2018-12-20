@@ -16,7 +16,7 @@
 
 function find_id(name) {
 	var img = name;
-	$("#modal_category_img").attr("src", "/resources/category_img/"+img);
+	$("#modal_menu_img").attr("src", "/resources/menu_img/"+img);
 };
 
 </script>
@@ -25,7 +25,7 @@ function find_id(name) {
 </head>
 <body>
 <div>
-<input type="text" name="category_seatch">&nbsp;<button onclick='location.href="/category_insert";'>등록</button>&nbsp;<button>삭제</button>
+<input type="text" name="name">&nbsp;<button onclick='location.href="/menu_insert";'>등록</button>&nbsp;<button>삭제</button>
 <br><br>
 <table class="table table-striped table-hover">
 <th>체크박스영역</th>
@@ -33,23 +33,48 @@ function find_id(name) {
 <th>카테고리</th>
 <th>ICE/HOT</th>
 <th>가격</th>
+<th>설명</th>
 <th>사진</th>
 <th>수정</th>
 <th>삭제</th>
-<%-- <c:forEach items="${list }" var="category"> --%>
+<c:forEach items="${list }" var="menu">
 	<tr>
 	<td><input type="checkbox"></td>
-	<td>아이스아메리카노</td>
-	<td>커피</td>
-	<td>ICE</td>
-	<td>3000</td>
-	<td><button type="button" data-toggle="modal" data-target="#myModal" id="${category.menu_category_img_stored_name }" onclick="find_id('${category.menu_category_img_stored_name}')">사진</button></td>
-	<td><button type="button" onclick='location.href="/category_update?category_no=${category.menu_category_no }";'>수정</button></td>
-	<td><button type="button" onclick='location.href="/category_delete?category_no=${category.menu_category_no }";'>삭제</button></td>
+	<td>${menu.menu_name }</td>
+	<td>${menu.menu_category_no }</td>
+	<td>${menu.menu_temperature }</td>
+	<td>${menu.menu_price }</td>
+	<td>${menu.menu_explanation }</td>
+	<td><button type="button" data-toggle="modal" data-target="#myModal" id="${menu.menu_name }" onclick="find_id('${menu.menu_image_stored_name}')">사진</button></td>
+	<td><button type="button" onclick='location.href="/category_update?category_no=${menu.menu_no }";'>수정</button></td>
+	<td><button type="button" onclick='location.href="/category_delete?category_no=${menu.menu_no }";'>삭제</button></td>
 	</tr>
-<%-- </c:forEach> --%>
+</c:forEach>
 
 </table>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+<%--      		<img class="categoryImg" src="${path}1.jpg"> --%>
+     		<img class="menuImg" id=modal_menu_img src="#">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+
+    
+  </div>
+
 
 </div>
 </body>

@@ -22,8 +22,9 @@ public interface Menu_Management_Service {
 	
 	public void delete_category(int category_no);
 	
-	public void insert_menu(ServletContext context, MultipartFile file, String category_select, String menu_name,
+	public void insert_menu(ServletContext context, MultipartFile file, int category_select, String menu_name,
 			String menu_explanation, int menu_price, String temperature);
 	
+	public List menu_selectAll();
 	
 }

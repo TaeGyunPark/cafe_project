@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import cafe.dao.face.Menu_Management_Dao;
+import cafe.dto.Cafe_business_menu;
 import cafe.dto.Cafe_menu_category;
 import cafe.service.face.Menu_Management_Service;
 
@@ -115,10 +116,48 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 		menu_Management_Dao.categoey_delete(cafe_menu_category);
 	}
 	
-	public void insert_menu(ServletContext context, MultipartFile file, String category_select, String menu_name,
+	public void insert_menu(ServletContext context, MultipartFile file, int category_select, String menu_name,
 			String menu_explanation, int menu_price, String temperature) {
 		
+		Cafe_business_menu cafe_business_menu = new Cafe_business_menu();
+
+		// UUID, 고유 식별자
+		String uId = UUID.randomUUID().toString();
+
+		// 파일이 저장될 경로
+		String stored = context.getRealPath("resources/menu_img");
+
+		// 저장될 파일의 이름
+		String name = file.getOriginalFilename() + "_" + uId;
+
+		// 파일객체
+		File dest = new File(stored, name);
+
+		// 파일 저장(업로드)
+		try {
+			file.transferTo(dest);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
+		cafe_business_menu.setMenu_name(menu_name);
+		cafe_business_menu.setMenu_category_no(category_select);
+		cafe_business_menu.setMenu_price(menu_price);
+		cafe_business_menu.setMenu_temperature(temperature);
+		cafe_business_menu.setMenu_explanation(menu_explanation);
+		cafe_business_menu.setMenu_image_origin_name(file.getOriginalFilename());
+		cafe_business_menu.setMenu_image_stored_name(name);
+		
+		
+		menu_Management_Dao.menu_insert(cafe_business_menu);
+	}
+
+
+	@Override
+	public List menu_selectAll() {
+		return menu_Management_Dao.menu_selectAll();
 	}
 	
 }

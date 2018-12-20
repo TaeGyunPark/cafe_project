@@ -2,6 +2,7 @@ package cafe.dao.face;
 
 import java.util.List;
 
+import cafe.dto.Cafe_business_menu;
 import cafe.dto.Cafe_menu_category;
 
 public interface Menu_Management_Dao {
@@ -14,5 +15,9 @@ public interface Menu_Management_Dao {
 	public void category_update(Cafe_menu_category cafe_menu_category);
 	
 	public void categoey_delete(Cafe_menu_category cafe_menu_category);
+	
+	public void menu_insert(Cafe_business_menu cafe_business_menu);
+	
+	public List menu_selectAll();
 	
 }

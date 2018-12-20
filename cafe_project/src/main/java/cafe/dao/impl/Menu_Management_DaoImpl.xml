@@ -30,5 +30,14 @@
 	<delete id="categoey_delete" parameterType="cafe.dto.Cafe_menu_category">
 		delete from cafe_menu_category where menu_category_no=#{menu_category_no}
 	</delete>
+	
+	
+	<insert id="menu_insert" parameterType="cafe.dto.Cafe_business_menu">
+		insert into Cafe_business_menu values(menu_no_seq.nextval, 1, #{menu_name}, #{menu_price}, #{menu_category_no}, #{menu_explanation}, #{menu_temperature}, #{menu_image_origin_name}, #{menu_image_stored_name})
+	</insert>
+	
+	<select id="menu_selectAll" resultType="cafe.dto.Cafe_business_menu">
+		select * from Cafe_business_menu
+	</select>
 
 </mapper>
