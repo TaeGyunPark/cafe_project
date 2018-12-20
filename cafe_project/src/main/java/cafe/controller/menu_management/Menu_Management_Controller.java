@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,6 +128,19 @@ public class Menu_Management_Controller {
 		mav.addObject("list", list);
 		mav.setViewName("menu_management/menu_insert");
 		return mav;
+	}
+	
+	@RequestMapping(value="/menu_insert", method=RequestMethod.POST)
+	public void menu_insert_proc(String menu_name, String category_select, String menu_explanation, int menu_price, @RequestParam(value="temperature") String temperature, @RequestParam(value="menu_file") MultipartFile fileupload) {
+		
+//		System.out.println(menu_name);
+//		System.out.println(category_select);
+//		System.out.println(menu_explanation);
+//		System.out.println(menu_price);
+//		System.out.println(temperature);
+//		System.out.println(fileupload);
+		menu_management_service.insert_menu(context, fileupload, category_select, menu_name, menu_explanation, menu_price, temperature);
+		
 	}
 	
 	

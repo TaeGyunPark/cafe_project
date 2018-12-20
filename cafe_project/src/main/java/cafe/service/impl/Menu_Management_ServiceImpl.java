@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.naming.Context;
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +113,12 @@ public class Menu_Management_ServiceImpl implements Menu_Management_Service {
 		cafe_menu_category.setMenu_category_no(category_no);
 		
 		menu_Management_Dao.categoey_delete(cafe_menu_category);
+	}
+	
+	public void insert_menu(ServletContext context, MultipartFile file, String category_select, String menu_name,
+			String menu_explanation, int menu_price, String temperature) {
+		
+		
 	}
 	
 }
